@@ -76,26 +76,26 @@ namespace Spatial4n.Core.Io
 			var point = shape as Point;
 			if (point != null)
 			{
-				return point.GetX().ToString("F6", CultureInfo.CreateSpecificCulture("en-US")) + " " +
-					   point.GetY().ToString("F6", CultureInfo.CreateSpecificCulture("en-US"));
+				return point.GetX().ToString("F6", new CultureInfo("en-US")) + " " +
+					   point.GetY().ToString("F6", new CultureInfo("en-US"));
 			}
 
 			var rect = shape as Rectangle;
 			if (rect != null)
 			{
-				return rect.GetMinX().ToString("F6", CultureInfo.CreateSpecificCulture("en-US")) + " " +
-					   rect.GetMinY().ToString("F6", CultureInfo.CreateSpecificCulture("en-US")) + " " +
-					   rect.GetMaxX().ToString("F6", CultureInfo.CreateSpecificCulture("en-US")) + " " +
-					   rect.GetMaxY().ToString("F6", CultureInfo.CreateSpecificCulture("en-US"));
+				return rect.GetMinX().ToString("F6", new CultureInfo("en-US")) + " " +
+					   rect.GetMinY().ToString("F6", new CultureInfo("en-US")) + " " +
+					   rect.GetMaxX().ToString("F6", new CultureInfo("en-US")) + " " +
+					   rect.GetMaxY().ToString("F6", new CultureInfo("en-US"));
 			}
 
 			var c = shape as Circle;
 			if (c != null)
 			{
 				return "Circle(" +
-					   c.GetCenter().GetX().ToString("F6", CultureInfo.CreateSpecificCulture("en-US")) + " " +
-					   c.GetCenter().GetY().ToString("F6", CultureInfo.CreateSpecificCulture("en-US")) + " " +
-					   "d=" + c.GetRadius().ToString("F6", CultureInfo.CreateSpecificCulture("en-US")) +
+					   c.GetCenter().GetX().ToString("F6", new CultureInfo("en-US")) + " " +
+					   c.GetCenter().GetY().ToString("F6", new CultureInfo("en-US")) + " " +
+					   "d=" + c.GetRadius().ToString("F6", new CultureInfo("en-US")) +
 					   ")";
 			}
 

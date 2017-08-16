@@ -120,6 +120,7 @@
     <Compile Include="Util\GeohashUtils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Spatial4n.Core.project.json" />
     <None Include="Spatial4n.snk" />
   </ItemGroup>
   <ItemGroup />

@@ -91,23 +91,23 @@ namespace Spatial4n.Core.Context
             String calcStr;
             if (!Args.TryGetValue("distCalculator", out calcStr) || calcStr == null)
                 return;
-            if (calcStr.Equals("haversine", StringComparison.InvariantCultureIgnoreCase))
+            if (calcStr.Equals("haversine", StringComparison.OrdinalIgnoreCase))
             {
                 Calculator = new GeodesicSphereDistCalc.Haversine();
             }
-            else if (calcStr.Equals("lawOfCosines", StringComparison.InvariantCultureIgnoreCase))
+            else if (calcStr.Equals("lawOfCosines", StringComparison.OrdinalIgnoreCase))
             {
                 Calculator = new GeodesicSphereDistCalc.LawOfCosines();
             }
-            else if (calcStr.Equals("vincentySphere", StringComparison.InvariantCultureIgnoreCase))
+            else if (calcStr.Equals("vincentySphere", StringComparison.OrdinalIgnoreCase))
             {
                 Calculator = new GeodesicSphereDistCalc.Vincenty();
             }
-            else if (calcStr.Equals("cartesian", StringComparison.InvariantCultureIgnoreCase))
+            else if (calcStr.Equals("cartesian", StringComparison.OrdinalIgnoreCase))
             {
                 Calculator = new CartesianDistCalc();
             }
-            else if (calcStr.Equals("cartesian^2", StringComparison.InvariantCultureIgnoreCase))
+            else if (calcStr.Equals("cartesian^2", StringComparison.OrdinalIgnoreCase))
             {
                 Calculator = new CartesianDistCalc(true);
             }
