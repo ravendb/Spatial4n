@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <AssemblyTitle>Spatial4n Core NTS</AssemblyTitle>
-    <VersionPrefix>0.3.1</VersionPrefix>
+    <VersionPrefix>0.3.2</VersionPrefix>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Spatial4n.Core.NTS</AssemblyName>
     <AssemblyOriginatorKeyFile>Spatial4n.snk</AssemblyOriginatorKeyFile>
@@ -17,16 +17,12 @@
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <Version>0.3.100</Version>
+    <Version>0.3.200</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\GeoAPI\GeoAPI\GeoAPI.csproj" />
-    <ProjectReference Include="..\..\NetTopologySuite\NetTopologySuite\NetTopologySuite.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <PackageReference Include="Microsoft.CSharp" Version="4.4.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+    <PackageReference Include="NetTopologySuite" Version="1.15.2" />
   </ItemGroup>
 
 </Project>

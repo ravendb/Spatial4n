@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.3
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{38A2DEA1-817A-4A18-BCA6-2D214D2F190C}"
 	ProjectSection(SolutionItems) = preProject
@@ -11,10 +11,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{496516A3-D986-4C24-991B-42372A52BB78}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spatial4n.Core.NTS", "Spatial4n.Core\Spatial4n.Core.NTS.csproj", "{DDCB0537-C471-4ACD-B48B-56EB1711EB4A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoAPI", "..\GeoAPI\GeoAPI\GeoAPI.csproj", "{012BD6EF-C6E9-42CE-A6DE-37855D4376E6}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetTopologySuite", "..\NetTopologySuite\NetTopologySuite\NetTopologySuite.csproj", "{1BB9175A-26C9-4195-83B6-F23F206E75F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,22 +28,6 @@ Global
 		{DDCB0537-C471-4ACD-B48B-56EB1711EB4A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DDCB0537-C471-4ACD-B48B-56EB1711EB4A}.Release35|Any CPU.ActiveCfg = Release|Any CPU
 		{DDCB0537-C471-4ACD-B48B-56EB1711EB4A}.Release35|Any CPU.Build.0 = Release|Any CPU
-		{012BD6EF-C6E9-42CE-A6DE-37855D4376E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{012BD6EF-C6E9-42CE-A6DE-37855D4376E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{012BD6EF-C6E9-42CE-A6DE-37855D4376E6}.Debug35|Any CPU.ActiveCfg = Debug|Any CPU
-		{012BD6EF-C6E9-42CE-A6DE-37855D4376E6}.Debug35|Any CPU.Build.0 = Debug|Any CPU
-		{012BD6EF-C6E9-42CE-A6DE-37855D4376E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{012BD6EF-C6E9-42CE-A6DE-37855D4376E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{012BD6EF-C6E9-42CE-A6DE-37855D4376E6}.Release35|Any CPU.ActiveCfg = Release|Any CPU
-		{012BD6EF-C6E9-42CE-A6DE-37855D4376E6}.Release35|Any CPU.Build.0 = Release|Any CPU
-		{1BB9175A-26C9-4195-83B6-F23F206E75F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1BB9175A-26C9-4195-83B6-F23F206E75F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1BB9175A-26C9-4195-83B6-F23F206E75F9}.Debug35|Any CPU.ActiveCfg = Debug|Any CPU
-		{1BB9175A-26C9-4195-83B6-F23F206E75F9}.Debug35|Any CPU.Build.0 = Debug|Any CPU
-		{1BB9175A-26C9-4195-83B6-F23F206E75F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1BB9175A-26C9-4195-83B6-F23F206E75F9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1BB9175A-26C9-4195-83B6-F23F206E75F9}.Release35|Any CPU.ActiveCfg = Release|Any CPU
-		{1BB9175A-26C9-4195-83B6-F23F206E75F9}.Release35|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
