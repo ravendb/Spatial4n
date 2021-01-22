@@ -20,6 +20,8 @@ using Spatial4n.Core.Exceptions;
 using Spatial4n.Core.Shapes;
 using System;
 using System.Globalization;
+using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace Spatial4n.Core.IO
 {
@@ -45,6 +47,9 @@ namespace Spatial4n.Core.IO
     [Obsolete]
     public class LegacyShapeReadWriterFormat
     {
+        [ThreadStatic]
+        private static StringBuilder _stringBuilder;
+
         private LegacyShapeReadWriterFormat()
         {
         }
@@ -73,24 +78,44 @@ namespace Spatial4n.Core.IO
             if (shape is IPoint)
             {
                 IPoint point = (IPoint)shape;
-                return point.X.ToString(numberFormat, CultureInfo.InvariantCulture) + " " + point.Y.ToString(numberFormat, CultureInfo.InvariantCulture);
+
+                var builder = GetStringBuilder();
+                builder
+                    .Append(point.X.ToString(numberFormat, CultureInfo.InvariantCulture))
+                    .Append(" ")
+                    .Append(point.Y.ToString(numberFormat, CultureInfo.InvariantCulture));
+
+                return builder.ToString();
             }
             else if (shape is IRectangle)
             {
                 IRectangle rect = (IRectangle)shape;
-                return rect.MinX.ToString(numberFormat, CultureInfo.InvariantCulture) + " " +
-                    rect.MinY.ToString(numberFormat, CultureInfo.InvariantCulture) + " " +
-                    rect.MaxX.ToString(numberFormat, CultureInfo.InvariantCulture) + " " +
-                    rect.MaxY.ToString(numberFormat, CultureInfo.InvariantCulture);
+                var builder = GetStringBuilder();
+                builder
+                    .Append(rect.MinX.ToString(numberFormat, CultureInfo.InvariantCulture))
+                    .Append(" ")
+                    .Append(rect.MinY.ToString(numberFormat, CultureInfo.InvariantCulture))
+                    .Append(" ")
+                    .Append(rect.MaxX.ToString(numberFormat, CultureInfo.InvariantCulture))
+                    .Append(" ")
+                    .Append(rect.MaxY.ToString(numberFormat, CultureInfo.InvariantCulture));
+
+                return builder.ToString();
             }
             else if (shape is ICircle)
             {
                 ICircle c = (ICircle)shape;
-                return "Circle(" +
-                    c.Center.X.ToString(numberFormat, CultureInfo.InvariantCulture) + " " +
-                    c.Center.Y.ToString(numberFormat, CultureInfo.InvariantCulture) + " " +
-                    "d=" + c.Radius.ToString(numberFormat, CultureInfo.InvariantCulture) +
-                    ")";
+                var builder = GetStringBuilder();
+                builder
+                    .Append("Circle(")
+                    .Append(c.Center.X.ToString(numberFormat, CultureInfo.InvariantCulture))
+                    .Append(" ")
+                    .Append(c.Center.Y.ToString(numberFormat, CultureInfo.InvariantCulture))
+                    .Append(" d=")
+                    .Append(c.Radius.ToString(numberFormat, CultureInfo.InvariantCulture))
+                    .Append(")");
+
+                return builder.ToString();
             }
             return shape.ToString();
         }
@@ -201,6 +226,16 @@ namespace Spatial4n.Core.IO
             double[]
             latLon = ParseUtils.ParseLatitudeLongitude(value);
             return ctx.MakePoint(latLon[1], latLon[0]);
+        }
+
+        private static StringBuilder GetStringBuilder()
+        {
+            if (_stringBuilder == null)
+                _stringBuilder = new StringBuilder();
+            else
+                _stringBuilder.Length = 0;
+
+            return _stringBuilder;
         }
     }
 }
